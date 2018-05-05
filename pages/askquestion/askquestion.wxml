@@ -1,0 +1,21 @@
+<!--pages/askquestion/askquestion.wxml-->
+<!--发布提问  -->
+<view class='container'>
+  <view class='content'>
+    <textarea placeholder='请输入提问内容'></textarea>
+  </view>
+  <view class='tip'>
+    <text>请选择您要提问的医生（单选，可不选）</text>
+  </view>
+  <scroll-view class='doctors' scroll-x="true">
+    <view class='inner'>
+      <view class='item' wx:for='{{10}}'>
+        <image class='avatar'></image>
+        <text class='name'>姓名</text>
+        <text class='title'>职称</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <button class='publish'>发布问题</button>
+</view>

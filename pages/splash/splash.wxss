@@ -1,0 +1,27 @@
+/* pages/splash/splash.wxss */
+
+/*主轴居中对齐  */
+.container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.view-top{
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.view-bottom{
+  flex-grow: 3;
+}
+
+.button{
+  margin-bottom: 20rpx;
+  color: black;
+}
+
+.button:hover{
+  color: grey;
+}

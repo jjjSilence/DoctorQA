@@ -1,0 +1,8 @@
+<!--pages/splash/splash.wxml-->
+ <view class='container'>
+  <view class='view-top'>
+    <button class='button patient' bindtap='goPatient'>患者端</button>
+    <button class='button doctor' bindtap='goDoctor'>医生端</button>
+  </view>
+  <view class='view-bottom'></view>
+</view> 

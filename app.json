@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/splash/splash",
+    "pages/myquestions/myquestions",
+    "pages/askquestion/askquestion",
+    "pages/doctorlist/doctorlist",
+    "pages/searchques/searchques",
+    "pages/register/register",
+    "pages/index/index",
+    "pages/patient/patient",
+    "pages/personal/personal",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#298DE5",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#dddddd"
+  },
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "#2A8CE5",
+    "backgroundColor": "#FBFBFB",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/doctorlist/doctorlist",
+        "text": "科室医生"
+      },
+      {
+        "pagePath": "pages/myquestions/myquestions",
+        "text": "我的提问"
+      },
+      {
+        "pagePath": "pages/askquestion/askquestion",
+        "text": "发布提问"
+      }
+    ]
+  }
+}

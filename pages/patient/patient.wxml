@@ -1,0 +1,40 @@
+<!--pages/patient/patient.wxml-->
+<!--pages/main/main.wxml-->
+<view class='stick-view'>
+  <view class='search'>
+    <image src='../../images/search.png'></image>
+    <text>请输入问题内容</text>
+  </view>
+
+  <view class='top-tab flex-wrp flex-tab'>
+    <view class="flex-item {{currentTab==idx?'active':' '}}" wx:for='{{navTab}}' wx:for-item='itemName' wx:for-index='idx' data-idx='{{idx}}' bindtap='switchTab'>
+      {{itemName}}
+    </view>
+  </view>
+</view>
+
+<scroll-view class='container activity'>
+
+
+  <view class='item' hidden='{{currentTab==0? false:true}}' wx:for='{{3}}'>
+    <view class='view0'>
+      <image></image>
+      <view class='view0-right'>
+        <text class='name'>用户名</text>
+        <text class='time'>发布时间</text>
+      </view>
+    </view>
+    <view class='view1'>
+      <text class='content'>这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容...</text>
+    </view>
+
+    <view class='view2'>
+      <text class='doctor'>提问医生</text>
+      <text class='answer-num'>回复数</text>
+    </view>
+  </view>
+
+
+  <view hidden='{{currentTab==1? false:true}}'>已读</view>
+  <view hidden='{{currentTab==2? false:true}}'>未读</view>
+</scroll-view>

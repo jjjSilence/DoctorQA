@@ -1,0 +1,87 @@
+/* pages/doctorlist/doctorlist.wxss */
+
+.container {
+  min-height: 1500rpx;
+  padding: 0 0 10rpx 0;
+}
+
+/*科室介绍图片  */
+.dept {
+  width: 100%;
+  height: 300rpx;
+  background: pink;
+}
+
+/*循环item  */
+.item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20rpx 0 20rpx 0;
+  margin: 0 0 10rpx 0;
+}
+
+/*第一行布局  */
+.item .view0 {
+  width: 710rpx;
+  margin: 0 0 0 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+/*头像  */
+.item .view0 .avatar {
+  width: 85rpx;
+  height: 85rpx;
+  background: peachpuff;
+}
+
+/*第一行右边布局  */
+.item .view0 .view0-right {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 0 0 20rpx;
+}
+
+/*医生姓名  */
+.view0-right .doctorName {
+  font-size: 32rpx;
+}
+
+/*医生职称  */
+.view0-right .doctorTitle {
+  font-size: 32rpx;
+}
+
+/*提问  */
+.view0 .ask {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  background: #f0f4f3;
+}
+
+/*  */
+.view0 .ask:hover {
+  background: #efeefe;
+}
+
+/*第二行布局 医生简介  */
+.view1 {
+  width: 710rpx;
+  margin: 0 0 0 20rpx;
+}
+
+/*医生简介  */
+.view1 .content {
+  display: block;
+  font-size: 32rpx;
+  border-color: gainsboro;
+  border-width: 2rpx;
+  border-style: solid;
+  border-radius: 10rpx;
+  margin: 20rpx 0 0 0;
+  padding: 10rpx 15rpx 10rpx 15rpx;
+}

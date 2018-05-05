@@ -1,0 +1,20 @@
+<!--pages/doctorlist/doctorlist.wxml-->
+<!--科室医生列表  -->
+<scroll-view class='container'>
+
+  <image class='dept'></image>
+
+  <view class='item' wx:for='{{10}}'>
+    <view class='view0'>
+      <image class='avatar'></image>
+      <view class='view0-right'>
+        <text class='doctorName'>医生姓名</text>
+        <text class='doctorTitle'>医生职称</text>
+      </view>
+      <button class='ask'>提问</button>
+    </view>
+    <view class='view1'>
+      <text class='content'>医生简介医生简介医生简介医生简介</text>
+    </view>
+  </view>
+</scroll-view>
