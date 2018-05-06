@@ -1,2 +1,15 @@
 <!--pages/doctor/doctor.wxml-->
-<text>pages/doctor/doctor.wxml</text>
+<import src="../template/template.wxml" />
+
+<view class='container'>
+  <template is="questionList" data="{{...item}}"/>
+</view>
+<view class='my_ques' hidden='{{currentTab==1?false:true}}'>
+  view1
+</view>
+
+<view class='tab'>
+  <view class="{{currentTab==idx? 'honver':''}}" wx:for='{{titles}}' wx:for-index='idx' wx:for-item='itemName' data-idx='{{idx}}' bindtap='goPage'>
+    {{itemName}}
+  </view>
+</view>

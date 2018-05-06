@@ -1,13 +1,12 @@
 {
   "pages": [
+    "pages/doctor/doctor",
     "pages/splash/splash",
+    "pages/doctorlist/doctorlist",
     "pages/myquestions/myquestions",
     "pages/askquestion/askquestion",
-    "pages/doctorlist/doctorlist",
     "pages/searchques/searchques",
-    "pages/register/register",
-    "pages/index/index",
-    "pages/patient/patient",
+    
     "pages/personal/personal",
     "pages/logs/logs"
   ],
@@ -16,7 +15,7 @@
     "navigationBarBackgroundColor": "#298DE5",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "#dddddd"
+    "backgroundColor": "#298DE5"
   },
   "tabBar": {
     "color": "#626567",
@@ -34,7 +33,7 @@
       },
       {
         "pagePath": "pages/askquestion/askquestion",
-        "text": "发布提问"
+        "text": "发布问题"
       }
     ]
   }

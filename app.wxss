@@ -1,4 +1,10 @@
 /**app.wxss**/
+
+/*所有页面的背景颜色  */
+page{
+  background-color: #F0F4F3;
+}
+
 .container {
   width: 750rpx;
   height: 100%;

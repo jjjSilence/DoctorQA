@@ -66,15 +66,15 @@ Page({
   },
 
   goDoctor:function(){
-    wx.switchTab({
-      url: '../doctorlist/doctorlist',
+    wx.redirectTo({
+      url: '../doctor/doctor',
     })
   },
 
 
   goPatient: function () {
-    wx.redirectTo({
-      url: '../patient/patient',
+    wx.switchTab({
+      url: '../doctorlist/doctorlist',
     })
   }
 })
