@@ -1,4 +1,5 @@
-<template name='questionItem'>
+<!--问题item  已答-->
+<template name='ques_item_answer'>
   <view class='question_item'>
     <view class='view0'>
       <image></image>
@@ -18,44 +19,30 @@
   </view>
 </template>
 
-
-<template name='questionList'>
-  <view>ddd</view>
-  <view class='stick-view'>
-    <navigator class='search' url='/pages/searchques/searchques'>
-      <image src='../../images/search.png'></image>
-      <text bindtap='goSearchQues'>{{tipmsg}}</text>
-    </navigator>
-
-    <view class='top-tab flex-wrp flex-tab'>
-      <view class="flex-item {{currentTab==idx?'active':' '}}" wx:for='{{navTab}}' wx:for-item='itemName' wx:for-index='idx' data-idx='{{idx}}' bindtap='switchTab'>
-        {{itemName}}
+<!--问题item  未答-->
+<template name='ques_item_unanswer'>
+  <view class='question_item'>
+    <view class='view0'>
+      <image></image>
+      <view class='view0-right'>
+        <text class='name'>提问患者</text>
+        <text class='time'>提问时间</text>
+      </view>
+      <view class='replay'>
+        <text>回复</text>
       </view>
     </view>
-    <view class='split'></view>
+    <view class='view1'>
+      <text class='content'>这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容...</text>
+    </view>
   </view>
-  <scroll-view class='container activity'>
 
-    <view class='item' hidden='{{currentTab==0? false:true}}' wx:for='{{4}}'>
-      <view class='view0'>
-        <image></image>
-        <view class='view0-right'>
-          <text class='name'>用户名</text>
-          <text class='time'>发布时间</text>
-        </view>
-      </view>
-      <view class='view1'>
-        <text class='content'>这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容...</text>
-      </view>
+</template>
 
-      <view class='view2'>
-        <text class='doctor'>提问医生</text>
-        <text class='answer-num'>回复数</text>
-      </view>
-    </view>
-
-
-    <view hidden='{{currentTab==1? false:true}}'>已答</view>
-    <view hidden='{{currentTab==2? false:true}}'>未答</view>
-  </scroll-view>
+<!--问题搜索  -->
+<template name='searchQues'>
+  <navigator class='search' url='/pages/searchques/searchques'>
+    <image src='../../images/search.png'></image>
+    <text>{{tipmsg}}</text>
+  </navigator>
 </template>

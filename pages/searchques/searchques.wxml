@@ -1,2 +1,13 @@
 <!--pages/searchques/searchques.wxml-->
-<text>pages/searchques/searchques.wxml</text>
+<view class="container">
+  <view class='search'>
+    <view class='search-left'>
+     
+      <input placeholder='搜索话题，问题或人'  placeholder-class='search-placeholder'></input>
+    </view>
+    <view class='search-right' bindtap='search'>
+     <image src='../../images/search.png'></image>
+    </view>
+  </view>
+
+</view>

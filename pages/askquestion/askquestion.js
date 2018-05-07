@@ -1,11 +1,15 @@
 // pages/askquestion/askquestion.js
+import temp from '../template/template.js'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    item: {
+      tipmsg: '请输入问题内容',
+    }
   },
 
   /**

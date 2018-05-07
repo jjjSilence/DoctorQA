@@ -1,4 +1,6 @@
 /* pages/doctor/doctor.wxss */
+
+/*导入template样式  */
 @import "../template/template.wxss";
 
 .container {
@@ -6,27 +8,87 @@
   padding: 0 0 100rpx 0;
 }
 
-.my_ques {
-}
+/*底部tab父布局  */
 
-.tab {
+.bottom-view {
   width: 100%;
-  height: 100rpx;
-  line-height: 100rpx;
+  height: 102rpx;
   display: flex;
+  flex-direction: column;
   position: fixed;
   bottom: 0;
   background: white;
 }
 
-.tab view {
+/*底部tab布局  */
+
+.bottom-tab {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  background: white;
+}
+
+/*tab  */
+
+.bottom-tab view {
   flex-grow: 1;
   text-align: center;
   color: #626567;
+  background: white;
 }
 
- .tab .honver {
+/*tab选中样式  */
+
+.bottom-tab .honver {
   color: #298de5;
-} 
+  background: #efefef;
+}
 
+.my_info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
 
+.info_view0 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+    padding: 20rpx;
+}
+
+.info_view0 image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  background-color: royalblue;
+}
+
+.info_view0 view {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 10rpx;
+}
+
+.info_view0 .name {
+  color: red;
+  font-size: 34rpx;
+}
+
+.info_view0 .title {
+  color: black;
+  font-size: 32rpx;
+}
+
+.info_view1 {
+  font-size: 34rpx;
+  margin: 20rpx;
+}
+
+.info_view2 {
+  font-size: 34rpx;
+  margin: 0 20rpx 20rpx 20rpx;
+}

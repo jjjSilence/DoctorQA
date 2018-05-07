@@ -5,9 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    subtitle: '请在此输入搜索内容',
   },
 
+  search:function(){
+    wx.showToast({
+      title: '开始搜索'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

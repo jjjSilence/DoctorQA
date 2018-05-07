@@ -1,10 +1,14 @@
 //app.js
 const config = require('config.js')
 const wechat = require('./utils/wechat.js')
+const project = require('./utils/project.js')
 
 App({
 
   onLaunch: function () {
+
+    console.log('onLaunch');
+
     var that = this;
 
     // 展示本地存储能力
@@ -16,6 +20,8 @@ App({
     that.getUserOpenId(function (a) {
       console.log('getUserOpenId' + a)
     });
+
+    console.log(project.getUserOpenId('d'))
 
     // 用户信息的授权请求
     wx.getSetting({
@@ -44,7 +50,8 @@ App({
   globalData: {
     hasUserInfo: false,
     userInfo: null,
-    openid: null
+    openid: null,
+    a: 'a'
   },
 
   // 获取openid 

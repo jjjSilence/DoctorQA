@@ -1,15 +1,51 @@
 <!--pages/doctor/doctor.wxml-->
 <import src="../template/template.wxml" />
 
-<view class='container'>
-  <template is="questionList" data="{{...item}}"/>
-</view>
-<view class='my_ques' hidden='{{currentTab==1?false:true}}'>
-  view1
+<view class='container my_ques' hidden='{{showIndex==0?false:true}}'>
+
+  <view class='top-view'>
+    <template is="searchQues" data="{{tipmsg:'请输入问题内容'}}" />
+    <view class='top-tab flex-wrp flex-tab'>
+      <view class="flex-item {{currentTab==idx?'active':' '}}" wx:for='{{navTab}}' wx:for-item='itemName' wx:for-index='idx' data-idx='{{idx}}' bindtap='switchTab'>
+        {{itemName}}
+      </view>
+    </view>
+    <view class='split'></view>
+  </view>
+
+  <scroll-view class='container activity'>
+    <view class='item' hidden='{{currentTab==0? false:true}}' wx:for='{{4}}'>
+      <template is="ques_item_unanswer" />
+    </view>
+    <view hidden='{{currentTab==1? false:true}}'>
+      <template is="ques_item_answer" wx:for='{{4}}' />
+    </view>
+    <view hidden='{{currentTab==2? false:true}}'>全部</view>
+  </scroll-view>
+
 </view>
 
-<view class='tab'>
-  <view class="{{currentTab==idx? 'honver':''}}" wx:for='{{titles}}' wx:for-index='idx' wx:for-item='itemName' data-idx='{{idx}}' bindtap='goPage'>
-    {{itemName}}
+<view class='container my_info' hidden='{{showIndex==1?false:true}}'>
+  <view class='info_view0'>
+    <image></image>
+    <view>
+      <text class='name'>姓名</text>
+      <text class='title'>职称</text>
+    </view>
+  </view>
+
+  <text class='info_view1'>简介</text>
+
+  <text class='info_view2'>简介内容</text>
+
+</view>
+
+
+<view class='bottom-view'>
+  <view class='split'></view>
+  <view class='bottom-tab'>
+    <view class="{{showIndex==idx? 'honver':''}}" wx:for='{{titles}}' wx:for-index='idx' wx:for-item='itemName' data-idx='{{idx}}' bindtap='goPage'>
+      {{itemName}}
+    </view>
   </view>
 </view>

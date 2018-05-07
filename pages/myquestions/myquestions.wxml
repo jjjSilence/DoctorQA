@@ -1,39 +1,23 @@
 <!--pages/myquestions/myquestions.wxml-->
+<import src="../template/template.wxml" />
 
-<view class='stick-view'>
-  <navigator class='search' url='/pages/searchques/searchques' >
-    <image src='../../images/search.png'></image>
-    <text bindtap='goSearchQues'>{{tipmsg}}</text>
-  </navigator>
+<view class='top-view'>
 
+  <template is="searchQues" data="{{...item}}" />
   <view class='top-tab flex-wrp flex-tab'>
     <view class="flex-item {{currentTab==idx?'active':' '}}" wx:for='{{navTab}}' wx:for-item='itemName' wx:for-index='idx' data-idx='{{idx}}' bindtap='switchTab'>
       {{itemName}}
     </view>
   </view>
   <view class='split'></view>
+
 </view>
 
 <scroll-view class='container activity'>
 
   <view class='item' hidden='{{currentTab==0? false:true}}' wx:for='{{4}}'>
-    <view class='view0'>
-      <image></image>
-      <view class='view0-right'>
-        <text class='name'>用户名</text>
-        <text class='time'>发布时间</text>
-      </view>
-    </view>
-    <view class='view1'>
-      <text class='content'>这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容...</text>
-    </view>
-
-    <view class='view2'>
-      <text class='doctor'>提问医生</text>
-      <text class='answer-num'>回复数</text>
-    </view>
+    <template is="ques_item_unanswer" data="{{...item}}" />
   </view>
-
 
   <view hidden='{{currentTab==1? false:true}}'>已答</view>
   <view hidden='{{currentTab==2? false:true}}'>未答</view>

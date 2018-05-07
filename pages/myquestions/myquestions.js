@@ -1,13 +1,16 @@
 // pages/myquestions/myquestions.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tipmsg:'请输入问题内容',
     navTab: ['全部', '已答', '未答'],
     currentTab: "0",
+    item:{
+      tipmsg:'请输入问题内容'
+    }
   },
 
   switchTab: function (e) {
