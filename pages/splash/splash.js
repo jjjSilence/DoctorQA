@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+
   },
 
   /**
@@ -65,7 +65,7 @@ Page({
     console.log('onShareAppMessage')
   },
 
-  goDoctor:function(){
+  goDoctor: function () {
     wx.redirectTo({
       url: '../doctor/doctor',
     })
@@ -76,5 +76,14 @@ Page({
     wx.switchTab({
       url: '../doctorlist/doctorlist',
     })
-  }
+  },
+
+  upper: function (e) {
+    console.log('upper' + e)
+  },
+  
+  lower: function (e) {
+    console.log('lower' + e)
+  },
 })
+

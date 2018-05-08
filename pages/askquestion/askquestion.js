@@ -1,5 +1,4 @@
 // pages/askquestion/askquestion.js
-import temp from '../template/template.js'
 
 Page({
 

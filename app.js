@@ -17,11 +17,14 @@ App({
     wx.setStorageSync('logs', logs)
 
     // 登录
-    that.getUserOpenId(function (a) {
-      console.log('getUserOpenId' + a)
+    that.getUserOpenId(function (err, openid) {
+      if (err){
+        console.log('callback--->' + '请求失败')
+      }else{
+        console.log('callback--->' +openid)
+      }
+     
     });
-
-    console.log(project.getUserOpenId('d'))
 
     // 用户信息的授权请求
     wx.getSetting({
@@ -56,14 +59,22 @@ App({
 
   // 获取openid 
   getUserOpenId: function (callback) {
-    console.log('getUserOpenId')
     var that = this
     if (that.globalData.openid) {
-      call.back('login success' + that.globalData.openid)
+      callback(null, that.globalData.openid)
     } else {
       wechat.login()
         .then(res => {
-          callback('login success' + res.code);
+          console.log(res.code)
+          project.getUserOpenId(res.code)
+            .then(res => {
+              var openid = res.openid;
+              that.globalData.openid = openid;
+              callback(null, openid);
+            })
+            .catch(err => {
+              callback(err, null);
+            })
         })
     }
   },

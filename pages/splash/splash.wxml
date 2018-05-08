@@ -1,8 +1,15 @@
 <!--pages/splash/splash.wxml-->
- <view class='container'>
-  <view class='view-top'>
-    <button class='button patient' bindtap='goPatient'>患者端</button>
-    <button class='button doctor' bindtap='goDoctor'>医生端</button>
-  </view>
-  <view class='view-bottom'></view>
-</view> 
+ <!-- <scroll-view class='container' scroll-y='true' bindscrolltolower='lower' bindscrolltoupper='upper' >  -->
+  <!-- <view class="item" wx:for='{{30}}' wx:key="index">
+    <text>test</text>
+  </view> -->
+ <!-- </scroll-view>  -->
+
+  <view class='container'>
+    <view class='view-top'>
+      <button class='button patient' bindtap='goPatient'>患者端</button>
+      <button class='button doctor' bindtap='goDoctor'>医生端</button>
+    </view>
+    <view class='view-bottom'></view>
+
+  </view> 

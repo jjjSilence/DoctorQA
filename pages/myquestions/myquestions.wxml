@@ -1,9 +1,9 @@
 <!--pages/myquestions/myquestions.wxml-->
-<import src="../template/template.wxml" />
+<import src="../template/question.wxml" />
 
 <view class='top-view'>
 
-  <template is="searchQues" data="{{...item}}" />
+  <template is="searchQues" data="{{tipmsg}}" />
   <view class='top-tab flex-wrp flex-tab'>
     <view class="flex-item {{currentTab==idx?'active':' '}}" wx:for='{{navTab}}' wx:for-item='itemName' wx:for-index='idx' data-idx='{{idx}}' bindtap='switchTab'>
       {{itemName}}
@@ -13,12 +13,18 @@
 
 </view>
 
-<scroll-view class='container activity'>
+<view class='container activity'>
 
-  <view class='item' hidden='{{currentTab==0? false:true}}' wx:for='{{4}}'>
-    <template is="ques_item_unanswer" data="{{...item}}" />
+  <view hidden='{{currentTab==0? false:true}}'>
+    <template is="refresh_load_list" data='{{unAnswerQues,hiddenHeader,hiddenFooter, unAnswer}}' />
   </view>
 
-  <view hidden='{{currentTab==1? false:true}}'>已答</view>
-  <view hidden='{{currentTab==2? false:true}}'>未答</view>
-</scroll-view>
+  <view hidden='{{currentTab==1? false:true}}'>
+    <template is="refresh_load_list" data='{{unAnswerQues,hiddenHeader,hiddenFooter, unAnswer}}' />
+  </view>
+  
+  <view hidden='{{currentTab==2? false:true}}'>
+    <template is="refresh_load_list" data='{{unAnswerQues,hiddenHeader,hiddenFooter, unAnswer}}' />
+  </view>
+
+</view>

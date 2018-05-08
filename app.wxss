@@ -43,6 +43,7 @@ page {
   display: flex;
   flex-direction: column;
   position: fixed;
+  top: 0;
   background: #f0f4f3;
   z-index: 9999;
 }
@@ -59,10 +60,11 @@ page {
   background: #fff;
 }
 
+
 /*滚动部分  */
 
 .container.activity {
-  padding: 197rpx 0 0 0;
+  padding: 0 0 0 0;
 }
 
 /*tab选中样式  */

@@ -1,10 +1,10 @@
 {
   "pages": [
     "pages/splash/splash",
-    "pages/searchques/searchques",
-    "pages/doctor/doctor",
-    "pages/doctorlist/doctorlist",
     "pages/myquestions/myquestions",
+    "pages/doctor/doctor",
+    "pages/searchques/searchques",
+    "pages/doctorlist/doctorlist",
     "pages/askquestion/askquestion",
     "pages/logs/logs"
   ],
@@ -13,7 +13,8 @@
     "navigationBarBackgroundColor": "#298DE5",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "#f0f4f3"
+    "backgroundColor": "#f0f4f3",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#626567",

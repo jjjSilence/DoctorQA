@@ -1,4 +1,5 @@
 // pages/doctor/doctor.js
+const data = require('../data/data_questions.js')
 
 Page({
 
@@ -14,13 +15,18 @@ Page({
     navTab: ['未答', '已答', '全部'],
     // 我的问题tab的索引
     currentTab: "0",
-
+    unAnswerQues: data.unAnswerQues.data,
+    hiddenHeader: false,
+    hiddenFooter: true,
+    unAnswer: true,
   },
 
   // 我的问题--顶部tab的切换
   switchTab: function (e) {
+    var index = e.currentTarget.dataset.idx
     this.setData({
-      currentTab: e.currentTarget.dataset.idx
+      currentTab: index,
+      unAnswer: index == 0 ? true : false,
     });
   },
 
@@ -32,12 +38,12 @@ Page({
     this.setData({
       showIndex: index
     })
-    wx: wx.setNavigationBarTitle({
+    wx.setNavigationBarTitle({
       title: this.data.titles[index]
     })
   },
 
-  onPullDownRefresh:function() {
+  onPullDownRefresh: function () {
 
     console.log("好用不?")
     wx.showToast({
@@ -46,7 +52,7 @@ Page({
       duration: 2000
     })
 
-    wx.stopPullDownRefresh();  
+    wx.stopPullDownRefresh();
 
   },
 
@@ -54,12 +60,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.showNavigationBarLoading();
-    // 
-    // wx.showLoading({ title: '拼命加载中...' })
-    // setTimeout(function(){
-    // wx.hideLoading();
-    // }, 2000)
+
   },
 
   /**
@@ -94,13 +95,37 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log('正在刷新...')
+    this.setData({
+      hiddenFooter: true,
+    })
+    wx: setTimeout(function () {
+      wx.stopPullDownRefresh();
+      wx.showLoading({
+        title: '数据加载中...',
+      })
+      wx: setTimeout(function () {
+        console.log('数据加载完成')
+        wx.hideLoading();
+      }, 2000)
+    }, 500)
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    console.log('onReachBottom')
+    var that = this;
+    wx.stopPullDownRefresh();
+    that.setData({
+      hiddenFooter: false,
+    })
+    wx: setTimeout(function () {
+      that.setData({
+        hiddenFooter: true,
+      })
+    }, 2000)
 
   },
 

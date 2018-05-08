@@ -1,0 +1,20 @@
+<template name='refresh'>
+  <view class='refresh' hidden='{{hiddenHeader}}'>
+    <view class="spinner spinner_top">
+      <view class="bounce1"></view>
+      <view class="bounce2"></view>
+      <view class="bounce3"></view>
+    </view>
+  </view>
+</template>
+
+<template name='load'>
+  <view class='load' hidden='{{hiddenFooter}}'>
+    <text>加载更多</text>
+    <view class="spinner spinner_bottom">
+      <view class="bounce1"></view>
+      <view class="bounce2"></view>
+      <view class="bounce3"></view>
+    </view>
+  </view>
+</template>

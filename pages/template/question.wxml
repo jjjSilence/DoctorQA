@@ -1,3 +1,13 @@
+<!--问题搜索  -->
+<import src="../template/loading.wxml" />
+
+<template name='searchQues'>
+  <navigator class='search' url='/pages/searchques/searchques'>
+    <image src='../../images/search.png'></image>
+    <text>{{tipmsg}}</text>
+  </navigator>
+</template>
+
 <!--问题item  已答-->
 <template name='ques_item_answer'>
   <view class='question_item'>
@@ -25,24 +35,27 @@
     <view class='view0'>
       <image></image>
       <view class='view0-right'>
-        <text class='name'>提问患者</text>
-        <text class='time'>提问时间</text>
+        <text class='name'>{{newsItem.quesioner}}</text>
+        <text class='time'>{{newsItem.time}}</text>
       </view>
       <view class='replay'>
         <text>回复</text>
       </view>
     </view>
     <view class='view1'>
-      <text class='content'>这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容...</text>
+      <text class='content'>{{newsItem.content}}</text>
     </view>
   </view>
 
 </template>
 
-<!--问题搜索  -->
-<template name='searchQues'>
-  <navigator class='search' url='/pages/searchques/searchques'>
-    <image src='../../images/search.png'></image>
-    <text>{{tipmsg}}</text>
-  </navigator>
+<!--刷新加载列表  -->
+<template name='refresh_load_list'>
+  <view class='list'>
+    <template is="refresh" data="{{hiddenHeader}}"/>
+    <view class='list' wx:for='{{unAnswerQues}}' wx:for-item="newsItem">
+      <template is="{{unAnswer? 'ques_item_unanswer':'ques_item_answer'}}" data="{{newsItem}}" />
+    </view>
+    <template is="load"  data="{{hiddenFooter}}"/>
+  </view>
 </template>

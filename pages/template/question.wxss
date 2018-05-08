@@ -1,0 +1,202 @@
+ @import "../template/loading.wxss"; 
+/**********************************搜索 start ***************************************/
+
+/*搜索的布局  */
+
+.search {
+  height: 65rpx;
+  line-height: 65rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  padding: 0 20rpx 0 20rpx;
+  margin: 10rpx;
+  border-width: 2rpx;
+  border-color: #ccc;
+  border-style: solid;
+  border-radius: 40rpx;
+}
+
+/*搜索图片  */
+
+.search image {
+  display: inline-block;
+  width: 35rpx;
+  height: 35rpx;
+  margin: 0 20rpx 0 0;
+}
+
+/*搜索的text  */
+
+.search text {
+  font-size: 26rpx;
+  color: #ccc;
+}
+
+/**********************************搜索 end ***************************************/
+
+/**********************************问题公共item start ***************************************/
+
+/*问题item父布局  */
+
+.question_item {
+  padding: 20rpx;
+  background: #fff;
+  margin: 0 0 10rpx 0;
+}
+
+/*item第一行  */
+
+.view0 {
+  display: flex;
+  flex-direction: row;
+}
+
+/*头像  */
+
+.view0 image {
+  width: 85rpx;
+  height: 85rpx;
+  background: pink;
+}
+
+/*第一行右边布局  */
+
+.view0 .view0-right {
+  display: flex;
+  flex-direction: column;
+  margin: 5rpx 0 0 20rpx;
+  flex-grow: 1;
+}
+
+/*用户名  */
+
+.view0 .view0-right .name {
+  font-size: 32rpx;
+}
+
+/*发布时间  */
+
+.view0 .view0-right .time {
+  font-size: 30rpx;
+}
+
+/*item第二行 内容  */
+
+.view1 {
+  padding: 15rpx 0 15rpx 0;
+}
+
+/*问题内容 控制显示行数  */
+
+.view1 .content {
+  font-size: 32rpx;
+  display: -webkit-box;
+  color: #000;
+  line-height: 40rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/**********************************问题公共item start ***************************************/
+
+/**********************************问题公共item 已答 start ***************************************/
+
+/*item第三行 两端分布布局  */
+
+.view2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10rpx 0 0;
+}
+
+/*提问医生、回复数  */
+
+.view2 text {
+  font-size: 28rpx;
+}
+
+/**********************************问题公共item 已答 end ***************************************/
+
+/**********************************问题公共item 未答 start ***************************************/
+
+.replay {
+  height: 65rpx;
+  line-height: 65rpx;
+  display: block;
+  border-color: #ccc;
+  border-style: solid;
+  border-width: 2rpx;
+  border-radius: 15rpx;
+}
+
+.replay text {
+  padding: 0 30rpx 0 30rpx;
+  font-size: 32rpx;
+}
+
+/**********************************问题公共item 未答 end ***************************************/
+
+/*------------------------------------------------------------*/
+
+.spinner_top view {
+  width: 8px;
+  height: 8px;
+  background-color: #298de5;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.spinner_bottom view {
+  width: 6px;
+  height: 6px;
+  background-color: #298de5;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0.0);
+  }
+
+  40% {
+    -webkit-transform: scale(1.0);
+  }
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  }
+
+  40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+/*--------------------------------------------------*/
