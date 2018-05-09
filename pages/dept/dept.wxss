@@ -1,0 +1,13 @@
+/* pages/dept/dept.wxss */
+
+.container {
+  width: 100%;
+  align-items: center;
+}
+
+.dept_intro {
+  font-size: 32rpx;
+  background: white;
+  margin: 20rpx 20rpx 20rpx 20rpx;
+  padding: 20rpx;
+}

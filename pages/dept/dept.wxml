@@ -1,0 +1,4 @@
+<!--pages/dept/dept.wxml-->
+<view class='container'>
+  <text class='dept_intro'>{{introduce}}</text>
+</view>

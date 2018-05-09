@@ -40,6 +40,8 @@ function signature(map) {
  * @returns {Json}
  */
 function map2Json(map) {
+  map.set('hospital', 1118);
+  map.set('deptName', '测试部门');
   var json = {};
   map.forEach(function (value, key) {
     json[key] = value;

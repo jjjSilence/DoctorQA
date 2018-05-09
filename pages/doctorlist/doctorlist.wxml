@@ -2,19 +2,19 @@
 <!--科室医生列表  -->
 <scroll-view class='container'>
 
-  <image class='dept'></image>
+  <image class='dept' bindtap='goDept'></image>
 
-  <view class='item' wx:for='{{10}}'>
+  <view class='item' wx:for='{{doctorList}}' wx:for-item="item">
     <view class='view0'>
       <image class='avatar'></image>
       <view class='view0-right'>
-        <text class='doctorName'>医生姓名</text>
-        <text class='doctorTitle'>医生职称</text>
+        <text class='doctorName'>{{item.name}}</text>
+        <text class='doctorTitle'>{{item.title}}</text>
       </view>
-      <button class='ask'>提问</button>
+      <button class='ask' bindtap='goAskQues'>提问</button>
     </view>
     <view class='view1'>
-      <text class='content'>医生简介医生简介医生简介医生简介</text>
+      <text class='content'>{{item.intro}}</text>
     </view>
   </view>
 </scroll-view>

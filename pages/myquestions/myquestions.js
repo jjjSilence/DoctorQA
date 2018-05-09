@@ -7,20 +7,39 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // tab数据
     navTab: ['全部', '已答', '未答'],
+    // 选择tab索引
     currentTab: "0",
+    // 搜索框的提示语
     tipmsg: '请输入问题内容',
-    unAnswerQues: data.unAnswerQues.data,
-    hiddenHeader: false,
-    hiddenFooter: true,
-    unAnswer: false,
+    // [全部list,已答list, 未答list]
+    allQuesList: new Array(),
+    // [已答type，已答type, 未答type]
+    types: [false,false,true],
+    // 显示当前界面的数据列表
+    questionList: null,
+    setting: {
+      // 是否隐藏刷新动画
+      hiddenHeader: false,
+      // 是否隐藏加载动画
+      hiddenFooter: true,
+      // 是否是未答类型
+      unAnswer: false,
+      // 是否隐藏回复按钮
+      hiddenReplay: true,
+    },
+
   },
 
   switchTab: function (e) {
     var index = e.currentTarget.dataset.idx
     this.setData({
       currentTab: index,
-      unAnswer: index == 2 ? true : false,
+      setting:{
+        unAnswer: this.data.types[index],
+      },
+      questionList: this.data.allQuesList[index],
     });
   },
 
@@ -42,7 +61,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var unAnswerQues = data.unAnswerQues.data;
+    var answerQues = data.answerQues.data;
+    var array = this.data.allQuesList;
 
+    array.push(answerQues);
+    array.push(answerQues);
+    array.push(unAnswerQues);
+
+    this.setData({
+      questionList: array[0]
+    })
   },
 
   /**

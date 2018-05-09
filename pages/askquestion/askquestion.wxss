@@ -40,6 +40,11 @@
   flex-direction: column;
   margin: 0 25rpx 0 0;
   align-items: center;
+  background: transparent;
+}
+
+.item.click {
+  background: white;
 }
 
 .item .avatar {
@@ -48,7 +53,6 @@
   background: papayawhip;
   text-align: center;
   border-radius: 60rpx;
-  
 }
 
 .item text {
@@ -60,11 +64,11 @@
   text-overflow: ellipsis;
 }
 
-.publish{
+.publish {
   font-size: 32rpx;
   background: white;
 }
 
-.publish:hover{
+.publish:hover {
   background: #efefef;
 }

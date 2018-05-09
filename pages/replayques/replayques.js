@@ -1,26 +1,11 @@
-// pages/doctorlist/doctorlist.js
-
-const data = require('../data/data_doctorlist.js')
-
+// pages/replayques/replayques.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    doctorList: data.doctorList.data,
-  },
-
-  goAskQues:function(){
-    wx.switchTab({
-      url: '../askquestion/askquestion',
-    })
-  },
-
-  goDept:function(){
-    wx.navigateTo({
-      url: '../dept/dept',
-    })
+  
   },
 
   /**
@@ -62,14 +47,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log('onPullDownRefresh')
+  
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log('onReachBottom')
+  
   },
 
   /**

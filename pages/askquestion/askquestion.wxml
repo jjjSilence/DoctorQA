@@ -9,10 +9,10 @@
   </view>
   <scroll-view class='doctors' scroll-x="true">
     <view class='inner'>
-      <view class='item' wx:for='{{10}}'>
+      <view class="item {{index==idx?'click':''}}" wx:for='{{doctorList}}' wx:for-item='item' wx:for-index='idx' data-idx='{{idx}}' wx:key="userInfoListId" bindtap='chooseDoctor'>
         <image class='avatar'></image>
-        <text class='name'>姓名</text>
-        <text class='title'>职称</text>
+        <text class='name'>{{item.name}}</text>
+        <text class='title'>{{item.title}}</text>
       </view>
     </view>
   </scroll-view>

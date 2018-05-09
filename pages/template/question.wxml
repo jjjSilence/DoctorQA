@@ -14,17 +14,17 @@
     <view class='view0'>
       <image></image>
       <view class='view0-right'>
-        <text class='name'>用户名</text>
-        <text class='time'>发布时间</text>
+        <text class='name'>{{newsItem.quesioner}}</text>
+        <text class='time'>{{newsItem.time}}</text>
       </view>
     </view>
     <view class='view1'>
-      <text class='content'>这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容这是问答内容...</text>
+      <text class='content'>{{newsItem.content}}</text>
     </view>
 
     <view class='view2'>
-      <text class='doctor'>提问医生</text>
-      <text class='answer-num'>回复数</text>
+      <text class='doctor'>{{newsItem.doctor}}</text>
+      <text class='answer-num'>{{newsItem.reply_num+'条回复'}}</text>
     </view>
   </view>
 </template>
@@ -38,9 +38,9 @@
         <text class='name'>{{newsItem.quesioner}}</text>
         <text class='time'>{{newsItem.time}}</text>
       </view>
-      <view class='replay'>
+      <navigator class='replay' url='/pages/replayques/replayques'  hidden='{{hiddenReplay}}'>
         <text>回复</text>
-      </view>
+      </navigator>
     </view>
     <view class='view1'>
       <text class='content'>{{newsItem.content}}</text>
@@ -52,10 +52,10 @@
 <!--刷新加载列表  -->
 <template name='refresh_load_list'>
   <view class='list'>
-    <template is="refresh" data="{{hiddenHeader}}"/>
-    <view class='list' wx:for='{{unAnswerQues}}' wx:for-item="newsItem">
-      <template is="{{unAnswer? 'ques_item_unanswer':'ques_item_answer'}}" data="{{newsItem}}" />
+    <template is="refresh" data="{{hiddenHeader}}" />
+    <view class='list' wx:for="{{questionList}}" wx:for-item="newsItem">
+      <template is="{{unAnswer? 'ques_item_unanswer':'ques_item_answer'}}" data="{{newsItem, hiddenReplay}}" />
     </view>
-    <template is="load"  data="{{hiddenFooter}}"/>
+    <template is="load" data="{{hiddenFooter}}" />
   </view>
 </template>
