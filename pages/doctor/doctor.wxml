@@ -15,13 +15,13 @@
 
   <view class='container activity'>
     <view hidden='{{currentTab==0? false:true}}'>
-      <template is="refresh_load_list" data='{{unAnswerQues,hiddenHeader,hiddenFooter, unAnswer}}' />
+      <template is="refresh_load_list" data='{{questionList,...setting}}' />
     </view>
     <view hidden='{{currentTab==1? false:true}}'>
-      <template is="refresh_load_list" data='{{unAnswerQues,hiddenHeader,hiddenFooter, unAnswer}}' />
+      <template is="refresh_load_list" data='{{questionList,...setting}}' />
     </view>
     <view hidden='{{currentTab==2? false:true}}'>
-      <template is="refresh_load_list" data='{{unAnswerQues,hiddenHeader,hiddenFooter, unAnswer}}' />
+      <template is="refresh_load_list" data='{{questionList,...setting}}' />
     </view>
   </view>
 

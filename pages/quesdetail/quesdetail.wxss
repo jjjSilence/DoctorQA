@@ -1,0 +1,58 @@
+/* pages/quesdetail/quesdetail.wxss */
+
+.container {
+  min-height: 1500rpx;
+}
+
+.head {
+  padding: 20rpx;
+  background: #fff;
+  margin: 0 0 20rpx 0;
+}
+
+
+.replay {
+  padding: 20rpx;
+  background: #fff;
+  margin: 0 0 3rpx 0;
+}
+
+.view0 {
+  display: flex;
+  flex-direction: row;
+}
+
+.view0 image {
+  width: 85rpx;
+  height: 85rpx;
+  background: pink;
+}
+
+.view0 .view0-right {
+  display: flex;
+  flex-direction: column;
+  margin: 5rpx 0 0 20rpx;
+  flex-grow: 1;
+}
+
+.view0 .view0-right .name {
+  font-size: 32rpx;
+}
+
+/*发布时间  */
+
+.view0 .view0-right .time {
+  font-size: 30rpx;
+}
+
+/*问题内容  */
+
+.view1 .content {
+  font-size: 32rpx;
+  display: -webkit-box;
+  color: #000;
+}
+
+.replay .content{
+  margin: 0 0 0 105rpx;
+}

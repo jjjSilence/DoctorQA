@@ -21,15 +21,15 @@ App({
       success(res) {
         console.log('success wx.getSetting');
         // 查询用户是否授权'scope.userInfo'
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，不会弹框
-          console.log('已经授权')
-          that.getUserOpenid();
-        } else {
-          // 还未授权，弹框请求用户授权
-          console.log('还未授权，弹框请求用户授权');
-          that.getUserOpenid();
-        }
+        // if (res.authSetting['scope.userInfo']) {
+        //   // 已经授权，不会弹框
+        //   console.log('已经授权')
+        //   that.getUserOpenid();
+        // } else {
+        //   // 还未授权，弹框请求用户授权
+        //   console.log('还未授权，弹框请求用户授权');
+        //   that.getUserOpenid();
+        // }
       },
       fail() {
         console.log('fail wx.getSetting')
@@ -53,8 +53,6 @@ App({
     doctorInfo: null
   },
 
-
-
   // 获取用户openid
   getUserOpenid() {
     var that = this;
@@ -65,7 +63,7 @@ App({
       console.log('userInfo=====>' + JSON.stringify(data));
       return that.getUserData();
     }).then(function (data) {
-      
+
       that.globalData.openid = JSON.parse(data).openid
       that.globalData.doctorInfo = JSON.parse(data).expert
       console.log('openid=====>' + that.globalData.openid);

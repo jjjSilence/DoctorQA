@@ -19,13 +19,14 @@ Page({
     types: [false,false,true],
     // 显示当前界面的数据列表
     questionList: null,
+    // 显示当前界面的数据列表
+    questionStr: null,
+    // template的设置
     setting: {
       // 是否隐藏刷新动画
       hiddenHeader: false,
       // 是否隐藏加载动画
       hiddenFooter: true,
-      // 是否是未答类型
-      unAnswer: false,
       // 是否隐藏回复按钮
       hiddenReplay: true,
     },
@@ -36,9 +37,6 @@ Page({
     var index = e.currentTarget.dataset.idx
     this.setData({
       currentTab: index,
-      setting:{
-        unAnswer: this.data.types[index],
-      },
       questionList: this.data.allQuesList[index],
     });
   },

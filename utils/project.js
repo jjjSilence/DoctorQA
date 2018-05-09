@@ -49,3 +49,5 @@ function getUserData(code, nickName, gender, avatar) {
 module.exports = {
   getUserData
 }
+
+

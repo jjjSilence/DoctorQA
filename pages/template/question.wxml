@@ -38,7 +38,7 @@
         <text class='name'>{{newsItem.quesioner}}</text>
         <text class='time'>{{newsItem.time}}</text>
       </view>
-      <navigator class='replay' url='/pages/replayques/replayques'  hidden='{{hiddenReplay}}'>
+      <navigator class='replay' url='/pages/replayques/replayques' hidden='{{hiddenReplay}}'>
         <text>回复</text>
       </navigator>
     </view>
@@ -54,7 +54,9 @@
   <view class='list'>
     <template is="refresh" data="{{hiddenHeader}}" />
     <view class='list' wx:for="{{questionList}}" wx:for-item="newsItem">
-      <template is="{{unAnswer? 'ques_item_unanswer':'ques_item_answer'}}" data="{{newsItem, hiddenReplay}}" />
+      <navigator class='question_item' url="/pages/quesdetail/quesdetail?qid={{newsItem.question_id}}">
+        <template is="{{newsItem.unAnswer? 'ques_item_unanswer':'ques_item_answer'}}" data="{{newsItem, hiddenReplay}}" />
+      </navigator>
     </view>
     <template is="load" data="{{hiddenFooter}}" />
   </view>

@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/myquestions/myquestions",
+    "pages/quesdetail/quesdetail",
+    "pages/doctor/doctor",
+    "pages/splash/splash",
     "pages/doctorlist/doctorlist",
     "pages/askquestion/askquestion",
-    "pages/doctor/doctor",
     "pages/dept/dept",
-    "pages/myquestions/myquestions",
-    "pages/splash/splash",
     "pages/replayques/replayques",
     "pages/searchques/searchques",
     "pages/logs/logs"
