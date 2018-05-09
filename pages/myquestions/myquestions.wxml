@@ -1,30 +1,3 @@
 <!--pages/myquestions/myquestions.wxml-->
 <import src="../template/question.wxml" />
-
-<view class='top-view'>
-
-  <template is="searchQues" data="{{tipmsg}}" />
-  <view class='top-tab flex-wrp flex-tab'>
-    <view class="flex-item {{currentTab==idx?'active':' '}}" wx:for='{{navTab}}' wx:for-item='itemName' wx:for-index='idx' data-idx='{{idx}}' bindtap='switchTab'>
-      {{itemName}}
-    </view>
-  </view>
-  <view class='split'></view>
-
-</view>
-
-<view class='container activity'>
-
-  <view hidden='{{currentTab==0? false:true}}'>
-    <template is="refresh_load_list" data='{{questionList,...setting}}' />
-  </view>
-
-  <view hidden='{{currentTab==1? false:true}}'>
-    <template is="refresh_load_list" data='{{questionList,...setting}}' />
-  </view>
-
-  <view hidden='{{currentTab==2? false:true}}'>
-    <template is="refresh_load_list" data='{{questionList,...setting}}' />
-  </view>
-
-</view>
+<template is="question" data="{{tipmsg,currentTab,navTab,questionList,hiddenHeader,hiddenFooter,hiddenReplay}}" />

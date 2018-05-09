@@ -16,20 +16,17 @@ Page({
     // [全部list,已答list, 未答list]
     allQuesList: new Array(),
     // [已答type，已答type, 未答type]
-    types: [false,false,true],
+    types: [false, false, true],
     // 显示当前界面的数据列表
     questionList: null,
     // 显示当前界面的数据列表
     questionStr: null,
-    // template的设置
-    setting: {
-      // 是否隐藏刷新动画
-      hiddenHeader: false,
-      // 是否隐藏加载动画
-      hiddenFooter: true,
-      // 是否隐藏回复按钮
-      hiddenReplay: true,
-    },
+    // 是否隐藏刷新动画
+    hiddenHeader: false,
+    // 是否隐藏加载动画
+    hiddenFooter: true,
+    // 是否隐藏回复按钮
+    hiddenReplay: true,
 
   },
 
@@ -38,6 +35,7 @@ Page({
     this.setData({
       currentTab: index,
       questionList: this.data.allQuesList[index],
+      hiddenReplay: true,
     });
   },
 
@@ -69,6 +67,12 @@ Page({
 
     this.setData({
       questionList: array[0]
+    })
+  },
+
+  goDetail: function () {
+    wx.navigateTo({
+      url: '/pages/quesdetail/quesdetail',
     })
   },
 

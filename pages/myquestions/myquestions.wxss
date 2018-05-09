@@ -1,6 +1,3 @@
 /*导入template样式  */
 @import "../template/question.wxss";
 
-.container {
-  min-height: 1500rpx;
-}

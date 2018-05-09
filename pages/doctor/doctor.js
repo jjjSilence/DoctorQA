@@ -11,9 +11,9 @@ Page({
     titles: ['我的问题', '个人中心'],
     // 底部tab的索引
     showIndex: "0",
-   // 我的问题tab的索引
+    // 我的问题tab的索引
     currentTab: "0",
-     // 搜索框的提示语
+    // 搜索框的提示语
     tipmsg: '请输入问题内容',
     // tab数据
     navTab: ['未答', '已答', '全部'],
@@ -23,17 +23,14 @@ Page({
     types: [true, false, false],
     // 显示当前界面的数据列表
     questionList: null,
-    // template的设置
-    setting: {
-      // 是否隐藏刷新动画
-      hiddenHeader: false,
-      // 是否隐藏加载动画
-      hiddenFooter: true,
-      // 是否是未答类型
-      unAnswer: true,
-      // 是否隐藏回复按钮
-      hiddenReplay: false,
-    },
+    // 是否隐藏刷新动画
+    hiddenHeader: false,
+    // 是否隐藏加载动画
+    hiddenFooter: true,
+    // 是否是未答类型
+    unAnswer: true,
+    // 是否隐藏回复按钮
+    hiddenReplay: false,
   },
 
   // 我的问题--顶部tab的切换

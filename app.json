@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/doctor/doctor",
     "pages/myquestions/myquestions",
     "pages/quesdetail/quesdetail",
-    "pages/doctor/doctor",
     "pages/splash/splash",
     "pages/doctorlist/doctorlist",
     "pages/askquestion/askquestion",

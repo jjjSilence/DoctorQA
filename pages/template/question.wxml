@@ -1,16 +1,9 @@
 <!--问题搜索  -->
 <import src="../template/loading.wxml" />
 
-<template name='searchQues'>
-  <navigator class='search' url='/pages/searchques/searchques'>
-    <image src='../../images/search.png'></image>
-    <text>{{tipmsg}}</text>
-  </navigator>
-</template>
-
 <!--问题item  已答-->
 <template name='ques_item_answer'>
-  <view class='question_item'>
+  <view class='question_item' bindtap='goDetail'>
     <view class='view0'>
       <image></image>
       <view class='view0-right'>
@@ -31,7 +24,7 @@
 
 <!--问题item  未答-->
 <template name='ques_item_unanswer'>
-  <view class='question_item'>
+  <view class='question_item' bindtap='goDetail'>
     <view class='view0'>
       <image></image>
       <view class='view0-right'>
@@ -41,6 +34,7 @@
       <navigator class='replay' url='/pages/replayques/replayques' hidden='{{hiddenReplay}}'>
         <text>回复</text>
       </navigator>
+      
     </view>
     <view class='view1'>
       <text class='content'>{{newsItem.content}}</text>
@@ -54,10 +48,43 @@
   <view class='list'>
     <template is="refresh" data="{{hiddenHeader}}" />
     <view class='list' wx:for="{{questionList}}" wx:for-item="newsItem">
-      <navigator class='question_item' url="/pages/quesdetail/quesdetail?qid={{newsItem.question_id}}">
-        <template is="{{newsItem.unAnswer? 'ques_item_unanswer':'ques_item_answer'}}" data="{{newsItem, hiddenReplay}}" />
-      </navigator>
+      <template is="{{newsItem.unAnswer? 'ques_item_unanswer':'ques_item_answer'}}" data="{{newsItem,hiddenReplay}}" />
     </view>
     <template is="load" data="{{hiddenFooter}}" />
+  </view>
+</template>
+
+<!--我的提问页面  -->
+<template name='question'>
+  <view class='top-view'>
+
+    <navigator class='search' url='/pages/searchques/searchques'>
+      <image src='../../images/search.png'></image>
+      <text>{{tipmsg}}</text>
+    </navigator>
+
+    <view class='top-tab flex-wrp flex-tab'>
+      <view class="flex-item {{currentTab==idx?'active':' '}}" wx:for='{{navTab}}' wx:for-item='itemName' wx:for-index='idx' data-idx='{{idx}}' bindtap='switchTab'>
+        {{itemName}}
+      </view>
+    </view>
+    <view class='split'></view>
+
+  </view>
+
+  <view class='container activity'>
+
+    <view hidden='{{currentTab==0? false:true}}'>
+      <template is="refresh_load_list" data='{{questionList,hiddenHeader,hiddenFooter,hiddenReplay}}' />
+    </view>
+
+    <view hidden='{{currentTab==1? false:true}}'>
+      <template is="refresh_load_list" data='{{questionList,hiddenHeader,hiddenFooter,hiddenReplay}}' />
+    </view>
+
+    <view hidden='{{currentTab==2? false:true}}'>
+      <template is="refresh_load_list" data='{{questionList,hiddenHeader,hiddenFooter,hiddenReplay}}' />
+    </view>
+
   </view>
 </template>
